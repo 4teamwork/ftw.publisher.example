@@ -36,7 +36,7 @@ to configure in the sender buildout. The user will then be used to
 invoke the queue execution using Products.ClockServer.
 
 sender buildout.cfg:
-
+::
     [buildout]
     ...
 
@@ -57,7 +57,7 @@ sender buildout.cfg:
         </clock-server>
 
 receiver buildout.cfg:
-
+::
     [buildout]
     ...
 
