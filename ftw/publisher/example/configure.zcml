@@ -1,6 +1,7 @@
 <configure
       xmlns="http://namespaces.zope.org/zope"
       xmlns:zcml="http://namespaces.zope.org/zcml"
+      xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
       i18n_domain="ftw.publisher.example">
 
     <!-- include the sender.zcml on the sender instance -->
@@ -10,5 +11,14 @@
     <!-- include the receiver.zcml on the receiver instance -->
     <include zcml:condition="installed ftw.publisher.receiver"
              file="receiver.zcml" />
+
+    <!-- workflow generic setup profile -->
+    <genericsetup:registerProfile
+          name="workflow"
+          title="ftw.publisher.example : workflow"
+          directory="profiles/workflow"
+          description="Example workflow used by both, sender and receiver."
+          provides="Products.GenericSetup.interfaces.EXTENSION"
+          />
 
 </configure>
