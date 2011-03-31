@@ -1,0 +1,14 @@
+<configure
+      xmlns="http://namespaces.zope.org/zope"
+      xmlns:zcml="http://namespaces.zope.org/zcml"
+      i18n_domain="ftw.publisher.example">
+
+    <!-- include the sender.zcml on the sender instance -->
+    <include zcml:condition="not-installed ftw.publisher.receiver"
+             file="sender.zcml" />
+
+    <!-- include the receiver.zcml on the receiver instance -->
+    <include zcml:condition="installed ftw.publisher.receiver"
+             file="receiver.zcml" />
+
+</configure>
