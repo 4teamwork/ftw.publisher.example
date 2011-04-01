@@ -146,7 +146,7 @@
  <transition transition_id="publish"
              title="Reviewer publishes content"
              new_state="published" trigger="USER"
-             before_script="" after_script="">
+             before_script="before_publish" after_script="">
   <description>Publishing the item makes it visible to other users.
 </description>
   <action url="%(content_url)s/content_status_modify?workflow_action=publish"
@@ -158,7 +158,7 @@
  <transition transition_id="reject"
              title="Reviewer send content back for re-drafting"
              new_state="private" trigger="USER"
-             before_script="" after_script="">
+             before_script="before_reject" after_script="">
   <description>Sending the item back will return the item to the original author instead of publishing it. You should preferably include a reason for why it was not published.
 </description>
   <action url="%(content_url)s/content_status_modify?workflow_action=reject"
@@ -170,7 +170,7 @@
  <transition transition_id="retract"
              title="Member retracts submission"
              new_state="private" trigger="USER"
-             before_script="" after_script="">
+             before_script="before_retract" after_script="">
   <description>If you submitted the item by mistake or want to perform additional edits, this will take it back.
 </description>
   <action url="%(content_url)s/content_status_modify?workflow_action=retract"
@@ -181,7 +181,7 @@
  </transition>
  <transition transition_id="revise" title="Revise content"
              new_state="revision" trigger="USER"
-             before_script="" after_script="">
+             before_script="before_revise" after_script="">
   <action url="%(content_url)s/content_status_modify?workflow_action=revise"
           category="workflow">Revise</action>
   <guard>
@@ -191,7 +191,7 @@
  <transition transition_id="submit"
              title="Member submits content for publication"
              new_state="pending" trigger="USER"
-             before_script="" after_script="">
+             before_script="before_submit" after_script="">
   <description>Puts your item in a review queue, so it can be published on the site.
 </description>
   <action url="%(content_url)s/content_status_modify?workflow_action=submit"
@@ -261,4 +261,19 @@
   <guard>
   </guard>
  </variable>
+ <script script_id="before_publish" type="Script (Python)"
+         filename="workflows/publisher_workflow/scripts/before_publish.py"
+         module="" function=""/>
+ <script script_id="before_reject" type="Script (Python)"
+         filename="workflows/publisher_workflow/scripts/before_reject.py"
+         module="" function=""/>
+ <script script_id="before_retract" type="Script (Python)"
+         filename="workflows/publisher_workflow/scripts/before_retract.py"
+         module="" function=""/>
+ <script script_id="before_revise" type="Script (Python)"
+         filename="workflows/publisher_workflow/scripts/before_revise.py"
+         module="" function=""/>
+ <script script_id="before_submit" type="Script (Python)"
+         filename="workflows/publisher_workflow/scripts/before_submit.py"
+         module="" function=""/>
 </dc-workflow>

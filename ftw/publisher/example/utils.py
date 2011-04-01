@@ -103,7 +103,7 @@ def is_action_possible(obj, action, show_warnings=False, show_errors=False):
                                     'utf-8')}))
 
     # referenced object still published
-    if action in ('delete', 'retract'):
+    if action in ('delete', 'retract', 'reject'):
         try:
             references = obj.getReferences()
         except AttributeError:

@@ -1,7 +1,8 @@
 <configure
       xmlns="http://namespaces.zope.org/zope"
-      xmlns:zcml="http://namespaces.zope.org/zcml"
+      xmlns:browser="http://namespaces.zope.org/browser"
       xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+      xmlns:zcml="http://namespaces.zope.org/zcml"
       i18n_domain="ftw.publisher.example">
 
     <!-- include the sender.zcml on the sender instance -->
@@ -19,6 +20,15 @@
           directory="profiles/workflow"
           description="Example workflow used by both, sender and receiver."
           provides="Products.GenericSetup.interfaces.EXTENSION"
+          />
+
+    <!-- controller page which is accessed from the publisher_workflow -->
+    <browser:page
+          name="publisher-workflow-controller"
+          for="*"
+          class=".browser.controller.PublisherWorkflowControllerView"
+          permission="zope2.View"
+          allowed_interface=".interfaces.IPublisherWorkflowController"
           />
 
 </configure>
