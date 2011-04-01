@@ -13,4 +13,18 @@
           provides="Products.GenericSetup.interfaces.EXTENSION"
           />
 
+
+    <!-- event handlers for publishing / deleting content -->
+    <subscriber
+          for="*
+               Products.DCWorkflow.interfaces.IAfterTransitionEvent"
+          handler=".eventhandlers.publish_after_transition"
+          />
+
+    <subscriber
+          for="Products.Archetypes.interfaces.IBaseContent
+               OFS.interfaces.IObjectWillBeRemovedEvent"
+          handler=".eventhandlers.handle_remove_event"
+          />
+
 </configure>
