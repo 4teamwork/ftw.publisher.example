@@ -25,6 +25,10 @@ def publish_after_transition(obj, event):
     else:
         setattr(event, _marker, True)
 
+    # when there is no transition for the state change, we do nothing
+    if not event.transition:
+        return
+
     # do nothing with temprorary objects
     if is_temporary(obj):
         return
