@@ -3,7 +3,6 @@
 PUSH_TRANSITIONS = (
     ('publisher_workflow', 'publish'),
     ('publisher_workflow', 'retract'),
-    ('publisher_workflow', 'revise'),
     )
 
 

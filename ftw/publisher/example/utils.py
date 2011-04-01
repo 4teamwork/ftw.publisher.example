@@ -75,7 +75,8 @@ def is_action_possible(obj, action, show_warnings=False, show_errors=False):
     request = obj.REQUEST
 
     # parent should be published
-    if action == 'push' and not is_published(parent):
+    if action == 'push' and not is_published(parent) and \
+            not IPloneSiteRoot.providedBy(parent):
         errors.append(_(u'error_parent_not_published',
                         default=u'Could not publish object: parent object ' +\
                             'must be published first!'))
