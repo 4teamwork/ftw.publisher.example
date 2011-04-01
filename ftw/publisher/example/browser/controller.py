@@ -13,27 +13,37 @@ class PublisherWorkflowControllerView(BrowserView):
     implements(IPublisherWorkflowController)
 
 
-    def check_publish_allowed(self):
+    def check_publish_allowed(self, state_change):
         if not is_action_possible(self.context, 'push',
                                   show_warnings=True, show_errors=True):
             raise Redirect(self.request.get('HTTP_REFERER'))
+        else:
+            return state_change
 
-    def check_reject_allowed(self):
+    def check_reject_allowed(self, state_change):
         if not is_action_possible(self.context, 'reject',
                                   show_warnings=True, show_errors=True):
             raise Redirect(self.request.get('HTTP_REFERER'))
+        else:
+            return state_change
 
-    def check_retract_allowed(self):
+    def check_retract_allowed(self, state_change):
         if not is_action_possible(self.context, 'retract',
                                   show_warnings=True, show_errors=True):
             raise Redirect(self.request.get('HTTP_REFERER'))
+        else:
+            return state_change
 
-    def check_revise_allowed(self):
+    def check_revise_allowed(self, state_change):
         if not is_action_possible(self.context, 'revise',
                                   show_warnings=True, show_errors=True):
             raise Redirect(self.request.get('HTTP_REFERER'))
+        else:
+            return state_change
 
-    def check_submit_allowed(self):
+    def check_submit_allowed(self, state_change):
         if not is_action_possible(self.context, 'submit',
                                   show_warnings=True, show_errors=True):
             raise Redirect(self.request.get('HTTP_REFERER'))
+        else:
+            return state_change
