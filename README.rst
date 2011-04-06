@@ -36,7 +36,6 @@ to configure in the sender buildout. The user will then be used to
 invoke the queue execution using Products.ClockServer.
 
 sender buildout.cfg:
-::
     [buildout]
     ...
 
@@ -57,7 +56,6 @@ sender buildout.cfg:
         </clock-server>
 
 receiver buildout.cfg:
-::
     [buildout]
     ...
 
@@ -78,7 +76,6 @@ the target plone site URL (realm) and the username / password of the
 user created on the *receiver* instance.
 
 
-=====
 Links
 =====
 
@@ -93,7 +90,6 @@ Here are some additional links:
 - Wiki: https://github.com/4teamwork/ftw.publisher.sender/wiki
 - Source code repository of the example package: https://github.com/4teamwork/ftw.publisher.example
 
-=======
 Credits
 =======
 
