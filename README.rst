@@ -93,11 +93,8 @@ Here are some additional links:
 - Wiki: https://github.com/4teamwork/ftw.publisher.sender/wiki
 - Source code repository of the example package: https://github.com/4teamwork/ftw.publisher.example
 
-Credits
-=======
 
-Sponsored by `4teamwork GmbH <http://www.4teamwork.ch/>`_.
+Maintainer
+==========
 
-Authors:
-
-- `jone <http://github.com/jone>`_
+This package is produced and maintained by `4teamwork <http://www.4teamwork.ch/>`_ company.
