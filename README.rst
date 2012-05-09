@@ -94,7 +94,9 @@ Here are some additional links:
 - Source code repository of the example package: https://github.com/4teamwork/ftw.publisher.example
 
 
-Maintainer
-==========
+Copyright
+---------
 
-This package is produced and maintained by `4teamwork <http://www.4teamwork.ch/>`_ company.
+This package is copyright by `4teamwork <http://www.4teamwork.ch/>`_.
+
+``ftw.publisher.example`` is licensed under GNU General Public License, version 2.
