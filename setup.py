@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = open('ftw/publisher/example/version.txt').read().strip()
+version = '1.1-dev'
 maintainer = 'Jonas Baumann'
 
 setup(name='ftw.publisher.example',
