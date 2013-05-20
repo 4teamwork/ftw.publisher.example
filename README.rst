@@ -35,7 +35,9 @@ You need to create a ClockServer-user on the *sender* instance with
 to configure in the sender buildout. The user will then be used to
 invoke the queue execution using Products.ClockServer.
 
-sender buildout.cfg::
+sender buildout.cfg:
+
+.. code:: ini
 
     [buildout]
     ...
@@ -57,7 +59,9 @@ sender buildout.cfg::
         </clock-server>
 
 
-receiver buildout.cfg::
+receiver buildout.cfg:
+
+.. code:: ini
 
     [buildout]
     ...
